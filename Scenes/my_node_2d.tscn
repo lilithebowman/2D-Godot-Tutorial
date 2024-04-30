@@ -1,0 +1,40 @@
+[gd_scene load_steps=2 format=3 uid="uid://deswvxj3vvv1j"]
+
+[ext_resource type="Texture2D" uid="uid://dg5d1lqg3g1so" path="res://icon.svg" id="1_5jbf7"]
+
+[node name="MyNode2D" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(283.5, 283.5)
+scale = Vector2(0.429688, 0.429688)
+texture = ExtResource("1_5jbf7")
+
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+position = Vector2(416, 280)
+scale = Vector2(0.429688, 0.429688)
+texture = ExtResource("1_5jbf7")
+
+[node name="Sprite2D4" type="Sprite2D" parent="."]
+position = Vector2(352, 367)
+scale = Vector2(0.429688, 0.429688)
+texture = ExtResource("1_5jbf7")
+
+[node name="Sprite2D5" type="Sprite2D" parent="."]
+position = Vector2(347, 456)
+scale = Vector2(0.429688, 0.429688)
+texture = ExtResource("1_5jbf7")
+
+[node name="Sprite2D6" type="Sprite2D" parent="."]
+position = Vector2(290, 430)
+scale = Vector2(0.429688, 0.429688)
+texture = ExtResource("1_5jbf7")
+
+[node name="Sprite2D7" type="Sprite2D" parent="."]
+position = Vector2(400, 433)
+scale = Vector2(0.429688, 0.429688)
+texture = ExtResource("1_5jbf7")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(325, 645)
+scale = Vector2(5.29687, 0.4375)
+texture = ExtResource("1_5jbf7")
