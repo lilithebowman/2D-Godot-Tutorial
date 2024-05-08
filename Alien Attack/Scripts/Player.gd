@@ -2,6 +2,17 @@ extends CharacterBody2D
 
 var speed = 300
 
+func shoot():
+	print("bang")
+	var rocket_scene = load("res://Scenes/rocket.tscn")
+	var rocket_instance = rocket_scene.instantiate()
+	add_child(rocket_instance)
+	pass
+
+func _process(delta):
+	if Input.is_action_just_pressed("Shoot"):
+		shoot()
+
 func _physics_process(delta):
 	velocity = Vector2(0, 0)
 	

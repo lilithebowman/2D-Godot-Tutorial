@@ -1,12 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://ccvf1p7lcvgyu"]
+[gd_scene load_steps=4 format=3 uid="uid://ccvf1p7lcvgyu"]
 
 [ext_resource type="Texture2D" uid="uid://bdmc4b6avm77" path="res://Assets/textures/rocket.png" id="1_gucpc"]
+[ext_resource type="Script" path="res://Scripts/rocket.gd" id="1_o106s"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1tprq"]
 radius = 14.0
 height = 48.0
 
 [node name="RocketArea2D" type="Area2D"]
+script = ExtResource("1_o106s")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.6, 0.6)
