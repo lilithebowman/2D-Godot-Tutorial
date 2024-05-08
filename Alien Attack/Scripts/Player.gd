@@ -1,13 +1,15 @@
 extends CharacterBody2D
 
-var speed = 300
+@export var speed = 300
+var rocket_scene = preload("res://Scenes/rocket.tscn")
+@onready var rocket_container = $RocketContainerNode
+
 
 func shoot():
 	print("bang")
-	var rocket_scene = load("res://Scenes/rocket.tscn")
 	var rocket_instance = rocket_scene.instantiate()
 	rocket_instance.global_position = global_position + Vector2 (100, 0)
-	add_sibling(rocket_instance)
+	rocket_container.add_child(rocket_instance)
 	pass
 
 func _process(delta):
