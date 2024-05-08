@@ -1,3 +1,11 @@
-[gd_scene format=3 uid="uid://d1ij28birbpm"]
+[gd_scene load_steps=2 format=3 uid="uid://d1ij28birbpm"]
+
+[ext_resource type="Texture2D" uid="uid://bmyyfpfogg6ok" path="res://Assets/textures/bg.png" id="1_x24px"]
 
 [node name="Game" type="Node2D"]
+
+[node name="Background" type="TextureRect" parent="."]
+offset_right = 1280.0
+offset_bottom = 720.0
+texture = ExtResource("1_x24px")
+stretch_mode = 1

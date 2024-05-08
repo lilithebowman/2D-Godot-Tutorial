@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://jxwqx0irum66"]
+
+[ext_resource type="Texture2D" uid="uid://bsaolh3reswtp" path="res://Assets/textures/player_ship.png" id="1_lipsb"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_yc7ho"]
+radius = 172.22
+
+[node name="PlayerCharacterBody2D" type="CharacterBody2D"]
+
+[node name="PlayerShip" type="Sprite2D" parent="."]
+texture = ExtResource("1_lipsb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_yc7ho")
