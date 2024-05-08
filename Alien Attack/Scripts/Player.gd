@@ -6,7 +6,8 @@ func shoot():
 	print("bang")
 	var rocket_scene = load("res://Scenes/rocket.tscn")
 	var rocket_instance = rocket_scene.instantiate()
-	add_child(rocket_instance)
+	rocket_instance.global_position = global_position + Vector2 (100, 0)
+	add_sibling(rocket_instance)
 	pass
 
 func _process(delta):
