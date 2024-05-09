@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://dhvnvy6mem3vh"]
+
+[ext_resource type="Script" path="res://Scripts/Enemy.gd" id="1_oexwm"]
+[ext_resource type="Texture2D" uid="uid://bby00tohaa6in" path="res://Assets/textures/enemy_ship.png" id="2_eh6go"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_yc7ho"]
+radius = 25.0
+
+[node name="EnemyCharacterBody2D" type="CharacterBody2D"]
+motion_mode = 1
+script = ExtResource("1_oexwm")
+
+[node name="EnemyShip" type="Sprite2D" parent="."]
+rotation = -1.5708
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_eh6go")
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(8, 0)
+shape = SubResource("CircleShape2D_yc7ho")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(8, -28)
+scale = Vector2(0.4, 0.4)
+shape = SubResource("CircleShape2D_yc7ho")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
+position = Vector2(8, 28)
+scale = Vector2(0.4, 0.4)
+shape = SubResource("CircleShape2D_yc7ho")

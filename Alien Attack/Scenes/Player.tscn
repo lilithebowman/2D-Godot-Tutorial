@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="2_vxdfn"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_yc7ho"]
-radius = 29.0689
+radius = 25.0
 
 [node name="PlayerCharacterBody2D" type="CharacterBody2D"]
 motion_mode = 1
