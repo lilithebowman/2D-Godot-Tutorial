@@ -17,3 +17,9 @@ func _on_screen_exited():
 	print("Rocket exited screen")
 	queue_free()
 	pass
+
+func _on_area_entered(area):
+	queue_free()
+	if area.name != self.name: area.take_damage(100)
+	print(area.name)
+	pass
