@@ -6,8 +6,7 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_yc7ho"]
 radius = 25.0
 
-[node name="EnemyCharacterBody2D" type="CharacterBody2D"]
-motion_mode = 1
+[node name="EnemyArea2D" type="Area2D"]
 script = ExtResource("1_oexwm")
 
 [node name="EnemyShip" type="Sprite2D" parent="."]
