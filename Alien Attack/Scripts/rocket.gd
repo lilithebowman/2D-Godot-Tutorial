@@ -4,6 +4,7 @@ extends Area2D
 @export var speed = 300
 @onready var visibleOnScreenNotifier = $VisibleOnScreenNotifier2D
 var current_speed = -(speed / 2)
+var health = 100
 
 func _ready():
 	visibleOnScreenNotifier.connect("screen_exited", _on_screen_exited)
@@ -23,3 +24,7 @@ func _on_area_entered(area):
 	if area.name != self.name: area.take_damage(100)
 	print(area.name)
 	pass
+	
+func take_damage(damage):
+	print(damage)
+	queue_free()
