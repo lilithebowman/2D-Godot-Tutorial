@@ -1,9 +1,11 @@
 extends CharacterBody2D
 
 @export var speed = 300
+@export var health = 100
 var rocket_scene = preload("res://Scenes/rocket.tscn")
 @onready var rocket_container = $RocketContainerNode
 
+signal took_damage
 
 func shoot():
 	print("bang")
@@ -32,3 +34,12 @@ func _physics_process(delta):
 	
 	global_position = global_position.clamp(Vector2(0, 0), get_viewport_rect().size)
 	pass
+	
+func die():
+	queue_free()
+
+func take_damage(damage):
+	print(damage)
+	health -= damage
+	if health <= 0:
+		emit_signal("took_damage")
