@@ -2,7 +2,11 @@ extends Node2D
 
 @export var lives = 3
 var score = 0
+@onready var hud = $UICanvasLayer/HUDControl
 @onready var player = $PlayerCharacterBody2D
+
+func _ready():
+	hud.set_score_label(score)
 
 func _on_enemy_death_zone_area_entered(area):
 	print(area.name)
@@ -31,4 +35,5 @@ func _on_enemy_spawner_enemy_spawned(enemy_instance):
 func _on_enemy_died(value):
 	print("enemy died")
 	score += value
+	hud.set_score_label(score)
 	print("Score: " + str(score))

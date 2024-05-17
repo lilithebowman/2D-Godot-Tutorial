@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://d1ij28birbpm"]
+[gd_scene load_steps=7 format=3 uid="uid://d1ij28birbpm"]
 
 [ext_resource type="Script" path="res://Scripts/game.gd" id="1_4pmql"]
 [ext_resource type="Texture2D" uid="uid://bmyyfpfogg6ok" path="res://Assets/textures/bg.png" id="1_x24px"]
+[ext_resource type="PackedScene" uid="uid://fkd634u8jgl2" path="res://Scenes/hud.tscn" id="2_ctjgd"]
 [ext_resource type="PackedScene" uid="uid://jxwqx0irum66" path="res://Scenes/Player.tscn" id="2_ex4h5"]
 [ext_resource type="PackedScene" uid="uid://l2m2jnbu7txe" path="res://Scenes/enemy_spawner.tscn" id="4_o0xec"]
 
@@ -10,6 +11,10 @@ size = Vector2(184, 973)
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_4pmql")
+
+[node name="UICanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="HUDControl" parent="UICanvasLayer" instance=ExtResource("2_ctjgd")]
 
 [node name="Background" type="TextureRect" parent="."]
 offset_right = 1280.0
