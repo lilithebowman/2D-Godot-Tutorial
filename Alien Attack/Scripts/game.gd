@@ -25,7 +25,7 @@ func _on_player_character_body_2d_took_damage():
 
 func _on_enemy_area_2d_enemy_died(value):
 	score += value
-	print(score)
+	print("Score: " + str(score))
 
 
 func _on_enemy_spawner_enemy_spawned(enemy_instance):
