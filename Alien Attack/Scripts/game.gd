@@ -11,8 +11,7 @@ func _ready():
 
 func _on_enemy_death_zone_area_entered(area):
 	print(area.name)
-	area.die()
-	pass # Replace with function body.
+	area.queue_free()
 
 func _on_player_character_body_2d_took_damage():
 	lives -= 1
@@ -20,6 +19,13 @@ func _on_player_character_body_2d_took_damage():
 	if lives <= 0:
 		print("you ded")
 		player.die()
+		
+		await get_tree().create_timer(1.5).timeout
+		var game_over_scene = preload("res://Scenes/game_over_control.tscn")
+		var game_over_instance = game_over_scene.instantiate()
+		$UICanvasLayer/HUDControl.add_child(game_over_instance)
+		game_over_instance.set_score(score)
+		
 		# end the game? queue_free()?
 	else:
 		print(lives)
