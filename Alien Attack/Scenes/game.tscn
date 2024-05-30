@@ -1,10 +1,12 @@
-[gd_scene load_steps=7 format=3 uid="uid://d1ij28birbpm"]
+[gd_scene load_steps=9 format=3 uid="uid://d1ij28birbpm"]
 
 [ext_resource type="Script" path="res://Scripts/game.gd" id="1_4pmql"]
 [ext_resource type="Texture2D" uid="uid://bmyyfpfogg6ok" path="res://Assets/textures/bg.png" id="1_x24px"]
 [ext_resource type="PackedScene" uid="uid://fkd634u8jgl2" path="res://Scenes/hud.tscn" id="2_ctjgd"]
 [ext_resource type="PackedScene" uid="uid://jxwqx0irum66" path="res://Scenes/Player.tscn" id="2_ex4h5"]
 [ext_resource type="PackedScene" uid="uid://l2m2jnbu7txe" path="res://Scenes/enemy_spawner.tscn" id="4_o0xec"]
+[ext_resource type="AudioStream" uid="uid://ctug8lw4et8ym" path="res://Assets/audio/explode.wav" id="6_l63pv"]
+[ext_resource type="AudioStream" uid="uid://c8a25wyoat2iv" path="res://Assets/audio/hit.wav" id="6_qc1yd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_55kj1"]
 size = Vector2(184, 973)
@@ -34,6 +36,12 @@ collision_mask = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="EnemyDeathZone"]
 position = Vector2(-170, 357)
 shape = SubResource("RectangleShape2D_55kj1")
+
+[node name="PlayerTakeDamageSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_l63pv")
+
+[node name="EnemyHitSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_qc1yd")
 
 [connection signal="took_damage" from="PlayerCharacterBody2D" to="." method="_on_player_character_body_2d_took_damage"]
 [connection signal="enemy_spawned" from="EnemySpawner" to="." method="_on_enemy_spawner_enemy_spawned"]

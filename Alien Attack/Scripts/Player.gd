@@ -4,6 +4,7 @@ extends CharacterBody2D
 @export var health = 100
 var rocket_scene = preload("res://Scenes/rocket.tscn")
 @onready var rocket_container = $RocketContainerNode
+@onready var laserFXSound = $LaserFXSound
 
 signal took_damage
 
@@ -12,6 +13,7 @@ func shoot():
 	var rocket_instance = rocket_scene.instantiate()
 	rocket_instance.global_position = global_position + Vector2 (100, 0)
 	rocket_container.add_child(rocket_instance)
+	laserFXSound.play()
 	pass
 
 func _process(delta):
