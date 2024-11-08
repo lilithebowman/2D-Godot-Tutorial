@@ -3,7 +3,7 @@ extends Area2D
 @export var acceleration = 25
 @export var speed = 300
 @onready var visibleOnScreenNotifier = $VisibleOnScreenNotifier2D
-var current_speed = -(speed / 2)
+var current_speed = -(speed / 2.0)
 var health = 100
 
 func _ready():
