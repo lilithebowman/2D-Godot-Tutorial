@@ -216,7 +216,12 @@ scale = Vector2(1.1, 1.1)
 shape = SubResource("RectangleShape2D_dkpsa")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+light_mask = 2
+visibility_layer = 5
 sprite_frames = SubResource("SpriteFrames_nvy4w")
 animation = &"Idle"
 frame_progress = 0.869065
 offset = Vector2(0, -16)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+limit_bottom = 245
