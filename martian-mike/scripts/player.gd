@@ -1,4 +1,5 @@
 extends CharacterBody2D
+class_name Player
 
 @onready var animated_sprite = $AnimatedSprite2D
 
@@ -11,7 +12,7 @@ func _physics_process(delta: float) -> void:
 		velocity.y += gravity * delta
 	
 	if Input.is_action_just_pressed("jump") && is_on_floor():
-		velocity.y = -jump_force
+		jump(jump_force)
 		if velocity.y > 500:
 			velocity.y = 500 # clamp it at 500
 
@@ -37,3 +38,6 @@ func update_animations(direction):
 		animated_sprite.play("Fall")
 	elif velocity.y < 0:
 		animated_sprite.play("Jump")
+		
+func jump(force):
+	velocity.y = -force
